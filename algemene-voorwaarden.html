@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algemene Voorwaarden – QR2Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --teal: rgb(77, 185, 194);
+      --blue: rgb(26, 108, 179);
+      --violet: rgb(61, 43, 216);
+      --border: rgba(0, 0, 0, 0.08);
+      --off: #f7f8fc;
+      --text: #1a1a2e;
+      --muted: #6b7280;
+      --grad: linear-gradient(135deg, var(--teal), var(--blue), var(--violet));
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--off);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 248, 252, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      position: relative;
+    }
+
+    .logo-text {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-back {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--blue); }
+
+    /* ── HERO ── */
+    .hero {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 3.5rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(77, 185, 194, 0.1);
+      border: 1px solid rgba(77, 185, 194, 0.25);
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 span {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-meta {
+      font-size: 0.875rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* ── LAYOUT ── */
+    .layout {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* ── SIDEBAR TOC ── */
+    .toc {
+      position: sticky;
+      top: 80px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    .toc-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .toc-list a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 5px 8px;
+      border-radius: 7px;
+      transition: all 0.15s;
+      line-height: 1.4;
+    }
+
+    .toc-list a:hover {
+      background: var(--off);
+      color: var(--blue);
+    }
+
+    .toc-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      min-width: 18px;
+    }
+
+    /* ── CONTENT ── */
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .section-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+      transition: box-shadow 0.2s;
+    }
+
+    .section-card:hover {
+      box-shadow: 0 4px 24px rgba(26,108,179,0.07);
+    }
+
+    .section-card:target {
+      border-color: rgba(77, 185, 194, 0.4);
+      box-shadow: 0 0 0 3px rgba(77, 185, 194, 0.1);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-number {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: var(--grad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: white;
+      margin-top: 2px;
+    }
+
+    .section-card h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.35;
+    }
+
+    .section-body {
+      padding-left: calc(34px + 1rem);
+    }
+
+    .section-body p,
+    .section-body li {
+      font-size: 0.9rem;
+      color: #374151;
+      line-height: 1.75;
+    }
+
+    .section-body ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .section-body ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .section-body ul li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--grad);
+      margin-top: 0.62em;
+    }
+
+    /* ── CONTACT CARD ── */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(77,185,194,0.08), rgba(26,108,179,0.06), rgba(61,43,216,0.04));
+      border: 1px solid rgba(77,185,194,0.25);
+    }
+
+    .contact-info {
+      padding-left: calc(34px + 1rem);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .contact-row svg {
+      color: var(--teal);
+      flex-shrink: 0;
+    }
+
+    .contact-row a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-row a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      background: white;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .layout {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1rem 4rem;
+        gap: 1.5rem;
+      }
+      .toc { position: static; }
+      .section-card { padding: 1.25rem 1.25rem; }
+      .section-body { padding-left: calc(34px + 0.75rem); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="index.html">
+    <!-- QR2Service 3-corner block logo -->
+    <svg class="logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="lg" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="rgb(77,185,194)"/>
+          <stop offset="50%" stop-color="rgb(26,108,179)"/>
+          <stop offset="100%" stop-color="rgb(61,43,216)"/>
+        </linearGradient>
+      </defs>
+      <rect x="2" y="2" width="13" height="13" rx="3" fill="url(#lg)"/>
+      <rect x="21" y="2" width="13" height="13" rx="3" fill="url(#lg)"/>
+      <rect x="2" y="21" width="13" height="13" rx="3" fill="url(#lg)"/>
+      <rect x="21" y="21" width="6" height="6" rx="1.5" fill="url(#lg)" opacity="0.5"/>
+      <rect x="29" y="21" width="5" height="5" rx="1.5" fill="url(#lg)" opacity="0.3"/>
+      <rect x="21" y="29" width="5" height="5" rx="1.5" fill="url(#lg)" opacity="0.3"/>
+    </svg>
+    <span class="logo-text">QR2Service</span>
+  </a>
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
+    Terug naar home
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+    Juridisch document
+  </div>
+  <h1>Algemene Voorwaarden<br/><span>QR2Service</span></h1>
+  <div class="hero-meta">
+    <span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Versie: 31 maart 2026
+    </span>
+    <span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      Van kracht per publicatiedatum
+    </span>
+    <span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Nederlands recht, Delft
+    </span>
+  </div>
+</section>
+
+<!-- MAIN LAYOUT -->
+<div class="layout">
+
+  <!-- SIDEBAR TOC -->
+  <aside class="toc">
+    <div class="toc-title">Inhoudsopgave</div>
+    <ul class="toc-list">
+      <li><a href="#art1"><span class="toc-num">1</span>Toepasselijkheid</a></li>
+      <li><a href="#art2"><span class="toc-num">2</span>Diensten</a></li>
+      <li><a href="#art3"><span class="toc-num">3</span>Gebruikersaccount</a></li>
+      <li><a href="#art4"><span class="toc-num">4</span>Prijzen en betaling</a></li>
+      <li><a href="#art5"><span class="toc-num">5</span>Gratis proefperiode</a></li>
+      <li><a href="#art6"><span class="toc-num">6</span>Duur en opzegging</a></li>
+      <li><a href="#art7"><span class="toc-num">7</span>Gebruik en aansprakelijkheid</a></li>
+      <li><a href="#art8"><span class="toc-num">8</span>Intellectueel eigendom</a></li>
+      <li><a href="#art9"><span class="toc-num">9</span>Privacy</a></li>
+      <li><a href="#art10"><span class="toc-num">10</span>Onderhoud</a></li>
+      <li><a href="#art11"><span class="toc-num">11</span>Aansprakelijkheid</a></li>
+      <li><a href="#art12"><span class="toc-num">12</span>Overmacht</a></li>
+      <li><a href="#art13"><span class="toc-num">13</span>Toepasselijk recht</a></li>
+      <li><a href="#art14"><span class="toc-num">14</span>Contact</a></li>
+    </ul>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <div class="section-card" id="art1">
+      <div class="section-header">
+        <div class="section-number">1</div>
+        <h2>Toepasselijkheid</h2>
+      </div>
+      <div class="section-body">
+        <p>Deze algemene voorwaarden zijn van toepassing op alle aanbiedingen, bestellingen, overeenkomsten en leveringen van producten en diensten via de website van QR2Service. Door een bestelling te plaatsen of een account aan te maken, gaat de klant akkoord met deze voorwaarden.</p>
+      </div>
+    </div>
+
+    <div class="section-card" id="art2">
+      <div class="section-header">
+        <div class="section-number">2</div>
+        <h2>Diensten</h2>
+      </div>
+      <div class="section-body">
+        <ul>
+          <li>QR2Service biedt online diensten aan voor het genereren, beheren en gebruiken van QR-codes, digitale menu's en gerelateerde functies voor bedrijven zoals restaurants en cafés.</li>
+          <li>De diensten kunnen gratis of tegen betaling worden aangeboden (abonnement).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card" id="art3">
+      <div class="section-header">
+        <div class="section-number">3</div>
+        <h2>Gebruikersaccount</h2>
+      </div>
+      <div class="section-body">
+        <ul>
+          <li>Om gebruik te maken van de diensten, dient de klant een account aan te maken.</li>
+          <li>De klant is verantwoordelijk voor het juist en veilig bewaren van inloggegevens.</li>
+          <li>QR2Service is niet aansprakelijk voor misbruik van accounts door derden.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card" id="art4">
+      <div class="section-header">
+        <div class="section-number">4</div>
+        <h2>Prijzen en Betaling</h2>
+      </div>
+      <div class="section-body">
+        <ul>
+          <li>Alle prijzen zijn vermeld in euro's en exclusief btw, tenzij anders aangegeven.</li>
+          <li>Betaling verloopt via de aangeboden betaalmethoden op de website.</li>
+          <li>Abonnementen worden per maand of per jaar vooraf gefactureerd.</li>
+          <li>QR2Service behoudt zich het recht voor prijzen en voorwaarden te wijzigen. Wijzigingen worden tijdig aangekondigd.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card" id="art5">
+      <div class="section-header">
+        <div class="section-number">5</div>
+        <h2>Gratis proefperiode</h2>
+      </div>
+      <div class="section-body">
+        <ul>
+          <li>Indien een gratis proefperiode wordt aangeboden, vervalt deze automatisch na afloop. De klant kan daarna vrijwillig kiezen om het betaalde abonnement te activeren.</li>
+          <li>Tijdens de proefperiode kunnen functies beperkt zijn.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card" id="art6">
+      <div class="section-header">
+        <div class="section-number">6</div>
+        <h2>Duur en opzegging</h2>
+      </div>
+      <div class="section-body">
+        <ul>
+          <li>Abonnementen lopen door tot wederopzegging.</li>
+          <li>Opzegging kan op elk moment via het accountdashboard of per e-mail.</li>
+          <li>Betaalde periodes worden niet terugbetaald tenzij anders overeengekomen.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card" id="art7">
+      <div class="section-header">
+        <div class="section-number">7</div>
+        <h2>Gebruik en Aansprakelijkheid</h2>
+      </div>
+      <div class="section-body">
+        <ul>
+          <li>De klant is zelf verantwoordelijk voor de inhoud die via QR2Service wordt geplaatst (zoals menu's, teksten of afbeeldingen).</li>
+          <li>QR2Service is niet verantwoordelijk voor fouten in de ingevoerde informatie of de werking van externe links.</li>
+          <li>QR2Service garandeert geen ononderbroken werking van de dienst, maar streeft naar maximale beschikbaarheid.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card" id="art8">
+      <div class="section-header">
+        <div class="section-number">8</div>
+        <h2>Intellectueel eigendom</h2>
+      </div>
+      <div class="section-body">
+        <ul>
+          <li>Alle rechten op software, ontwerpen, teksten, logo's en andere materialen van QR2Service blijven eigendom van QR2Service of haar licentiegevers.</li>
+          <li>Het is niet toegestaan om onderdelen van de dienst te kopiëren, wijzigen of door te verkopen zonder schriftelijke toestemming.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card" id="art9">
+      <div class="section-header">
+        <div class="section-number">9</div>
+        <h2>Privacy en gegevensverwerking</h2>
+      </div>
+      <div class="section-body">
+        <ul>
+          <li>QR2Service verwerkt persoonsgegevens volgens haar privacybeleid, dat beschikbaar is op de website.</li>
+          <li>De klant is verantwoordelijk voor de juistheid van de aangeleverde gegevens.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card" id="art10">
+      <div class="section-header">
+        <div class="section-number">10</div>
+        <h2>Onderhoud en updates</h2>
+      </div>
+      <div class="section-body">
+        <p>QR2Service mag de diensten tijdelijk offline halen voor onderhoud of updates. Waar mogelijk wordt dit vooraf aangekondigd.</p>
+      </div>
+    </div>
+
+    <div class="section-card" id="art11">
+      <div class="section-header">
+        <div class="section-number">11</div>
+        <h2>Aansprakelijkheid</h2>
+      </div>
+      <div class="section-body">
+        <ul>
+          <li>QR2Service is niet aansprakelijk voor indirecte schade, winstderving of gevolgschade.</li>
+          <li>In geval van directe schade is de aansprakelijkheid beperkt tot het bedrag dat de klant in de laatste drie maanden heeft betaald.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card" id="art12">
+      <div class="section-header">
+        <div class="section-number">12</div>
+        <h2>Overmacht</h2>
+      </div>
+      <div class="section-body">
+        <p>QR2Service is niet aansprakelijk voor schade door overmacht, waaronder storingen in internet, netwerk, software, of door overheidsmaatregelen.</p>
+      </div>
+    </div>
+
+    <div class="section-card" id="art13">
+      <div class="section-header">
+        <div class="section-number">13</div>
+        <h2>Toepasselijk recht en geschillen</h2>
+      </div>
+      <div class="section-body">
+        <p>Op deze voorwaarden is het Nederlands recht van toepassing. Geschillen worden voorgelegd aan de bevoegde rechter in het arrondissement waar QR2Service is gevestigd.</p>
+      </div>
+    </div>
+
+    <div class="section-card contact-card" id="art14">
+      <div class="section-header">
+        <div class="section-number">14</div>
+        <h2>Contact</h2>
+      </div>
+      <div class="contact-info">
+        <div class="contact-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span><strong>QR2Service</strong> — onderdeel van iTrade VOF, Delft</span>
+        </div>
+        <div class="contact-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <a href="mailto:contact@qr2service.nl">contact@qr2service.nl</a>
+        </div>
+        <div class="contact-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <a href="https://www.qr2service.nl" target="_blank">www.qr2service.nl</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 QR2Service · iTrade VOF · Delft · <a href="privacy.html">Privacybeleid</a> · <a href="algemene-voorwaarden.html">Algemene Voorwaarden</a></p>
+</footer>
+
+</body>
+</html>
