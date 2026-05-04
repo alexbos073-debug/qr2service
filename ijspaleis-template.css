@@ -1,0 +1,382 @@
+/*
+ * ============================================================
+ *  IJspaleis PWA — Template CSS
+ *  Pas dit bestand aan om een eigen thema / template te maken.
+ *
+ *  HOE GEBRUIKEN:
+ *  Voeg onderaan de <head> van ijspaleis-pwa.html toe:
+ *  <link rel="stylesheet" href="ijspaleis-template.css"/>
+ *  Alle variabelen hieronder overschrijven de app-standaarden.
+ * ============================================================
+ */
+
+
+/* ============================================================
+   1. KLEUREN
+   ============================================================ */
+:root {
+
+  /* Hoofdkleur — knoppen, accenten, titels */
+  --pink:        #EA0C86;
+
+  /* Lichte variant — randen, backgrounds van cards */
+  --pink-light:  #f7c6e3;
+
+  /* Zeer lichte achtergrond — schermen, hover-states */
+  --pink-pale:   #fff0f8;
+
+  /* Donkere variant — hover op knoppen */
+  --pink-dark:   #c4006e;
+
+  /* App achtergrond (buiten het telefoonframe op desktop) */
+  /* background van <body> */
+
+  /* Tekst hoofdkleur */
+  --text-dark:   #2d1a2e;
+
+  /* Tekst secondair (labels, prijzen, omschrijvingen) */
+  --text-mid:    #6b3a6b;
+
+  /* Wit — knoppen, tekst op gekleurde achtergrond */
+  --white:       #ffffff;
+}
+
+
+/* ============================================================
+   2. TYPOGRAFIE
+   ============================================================ */
+:root {
+
+  /* Lettertype voor titels, knoppen, prijzen */
+  --font-title:  'Times New Roman', Times, serif;
+
+  /* Lettertype voor lopende tekst, labels, omschrijvingen */
+  --font-body:   'Georgia', serif;
+
+  /*
+   * TIP: vervang door Google Fonts:
+   * Voeg in <head> toe:
+   * <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet"/>
+   * Dan hier:
+   * --font-title: 'Playfair Display', serif;
+   */
+}
+
+
+/* ============================================================
+   3. AFMETINGEN & VORMEN
+   ============================================================ */
+:root {
+
+  /* Afronding hoeken — grote elementen (cards, modals) */
+  --radius:    18px;
+
+  /* Afronding hoeken — kleine elementen (inputs, badges) */
+  --radius-sm: 10px;
+
+  /* Schaduwen */
+  --shadow:    0 4px 20px rgba(234,12,134,0.18);
+  --shadow-lg: 0 8px 32px rgba(234,12,134,0.28);
+
+  /* Animatiesnelheid */
+  --transition: 0.28s cubic-bezier(.4,0,.2,1);
+}
+
+
+/* ============================================================
+   4. SCHERM 1 — WELKOMSTSCHERM
+   ============================================================ */
+
+/* Achtergrond van het welkomstscherm */
+#s1 {
+  background: transparent;
+  /* Voorbeelden:
+  background: linear-gradient(160deg, #fde8f5 0%, #ffffff 100%);
+  background: url('mijn-achtergrond.jpg') center/cover no-repeat;
+  */
+}
+
+/* "Welkom bij" tekst */
+.s1__welcome {
+  color: var(--pink);
+  /* color: #ffffff;   ← wit op donkere achtergrond */
+}
+
+/* Bedrijfsnaam */
+.s1__name {
+  color: var(--pink);
+}
+
+/* Start-knop kleur (overschrijft ook --start-btn-color) */
+:root {
+  --start-btn-color: #EA0C86;
+  --start-btn-text:  #ffffff;
+}
+
+
+/* ============================================================
+   5. SCHERM 2 — KEUZESCHERM
+   ============================================================ */
+
+/* Achtergrond keuzescherm */
+#s2 {
+  background: transparent;
+  /* background: linear-gradient(180deg, #fde8f5 0%, #fff 60%); */
+}
+
+/* Sectietitels ("Bouw je eigen ijsje", "Of kies iets lekkers") */
+.s2__section-title {
+  color: var(--pink);
+  /* font-size: 22px; */
+}
+
+/* Keuzekaartjes (Overige, Iets anders, Frisdrank) */
+.s2__base-card {
+  border-radius: var(--radius);
+  border: 3px solid transparent;
+  background: #ffffff;
+}
+.s2__base-card:active {
+  border-color: var(--pink);
+}
+
+/* Naam-invulveld */
+.s2__naam-input {
+  border-color: var(--pink-light);
+}
+.s2__naam-input:focus {
+  border-color: var(--pink);
+}
+
+
+/* ============================================================
+   6. SCHERM 3A — BOUWER
+   ============================================================ */
+
+/* Gradient header bouwscherm */
+.s3a__header {
+  background: linear-gradient(135deg, var(--pink) 0%, #f06bb0 100%);
+}
+
+/* Preview box achtergrond */
+.s3a__preview {
+  background: linear-gradient(180deg, #fff8fd 0%, #ffffff 100%);
+  border-color: var(--pink-light);
+}
+
+/* Scrollsectie titels (Smaken / Toppings / Dips) */
+.scroll-section__title {
+  color: var(--pink);
+}
+
+
+/* ============================================================
+   7. SCHERM 3B / 3C / 3D — PRODUCT SCHERMEN
+   ============================================================ */
+
+/* Header van product-schermen */
+.s3b__header {
+  background: linear-gradient(135deg, var(--pink) 0%, #f06bb0 100%);
+}
+
+/* Filterknop actief */
+.filter-tab.active {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: #ffffff;
+}
+
+/* Product card geselecteerd */
+.product-card.selected {
+  border-color: var(--pink);
+  background: var(--pink-pale);
+}
+
+/* + / - knoppen */
+.qty-btn {
+  border-color: var(--pink);
+  color: var(--pink);
+}
+.qty-btn:active {
+  background: var(--pink);
+  color: #ffffff;
+}
+
+
+/* ============================================================
+   8. OVERZICHT SCHERM (SCHERM 4)
+   ============================================================ */
+
+/* Header */
+.s4__header {
+  background: linear-gradient(135deg, var(--pink) 0%, #f06bb0 100%);
+}
+
+/* Order item card */
+.s4__order-item {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(234,12,134,0.08);
+}
+
+/* Totaalregel */
+.s4__total-row {
+  color: var(--pink);
+}
+
+/* Notitie veld */
+.s4__note-input:focus {
+  border-color: var(--pink);
+}
+
+
+/* ============================================================
+   9. BEDANKSCHERM
+   ============================================================ */
+
+/* Bedanktitel */
+.s4__thanks-title {
+  color: var(--pink);
+}
+
+/* Social media knoppen — verander kleur per platform */
+.social-btn--whatsapp  { background: #25D366; }
+.social-btn--instagram { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+.social-btn--facebook  { background: #1877F2; }
+.social-btn--tiktok    { background: #010101; }
+
+
+/* ============================================================
+   10. POPUPS (info, allergieën, taal, afhalen)
+   ============================================================ */
+
+/* Popup overlay tint */
+.popup-overlay {
+  background: rgba(45,26,46,0.55);
+}
+
+/* Popup achtergrond */
+.popup {
+  background: #ffffff;
+  box-shadow: 0 16px 48px rgba(234,12,134,0.25);
+}
+
+/* Popup titel */
+.popup__title {
+  color: var(--pink);
+}
+
+/* Popup sluitknop */
+.popup__close {
+  background: var(--pink);
+  color: #ffffff;
+}
+
+
+/* ============================================================
+   11. KNOPPEN
+   ============================================================ */
+
+/* Primaire knop (Verder, Bestellen, Start) */
+.btn-primary {
+  background: var(--pink);
+  color: #ffffff;
+}
+.btn-primary:active {
+  background: var(--pink-dark);
+}
+
+/* Secundaire knop (Terug, Nog één) */
+.btn-secondary {
+  border-color: var(--pink);
+  color: var(--pink);
+}
+.btn-secondary:active {
+  background: var(--pink-pale);
+}
+
+
+/* ============================================================
+   12. CONTACTKNOPPEN (scherm 1)
+   ============================================================ */
+.s1__contact-btn {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.35);
+}
+.s1__contact-label {
+  color: var(--pink);
+}
+
+
+/* ============================================================
+   13. DESKTOP / TABLET ACHTERGROND
+   ============================================================ */
+@media (min-width: 900px) {
+  body {
+    /* Achtergrond buiten het telefoonframe */
+    background: linear-gradient(135deg, #f9d3ec, #ffe0f4, #ffd6f0);
+  }
+}
+
+
+/* ============================================================
+   VOORBEELD TEMPLATES
+   Verwijder commentaar (#) om een template te activeren
+   ============================================================ */
+
+
+/* --- TEMPLATE: Zomer / Strand ---
+:root {
+  --pink:       #FF6B35;
+  --pink-light: #FFD0B5;
+  --pink-pale:  #FFF5F0;
+  --pink-dark:  #CC4A1A;
+  --text-dark:  #2C1810;
+  --text-mid:   #7A4030;
+}
+*/
+
+
+/* --- TEMPLATE: Nacht / Dark mode ---
+:root {
+  --pink:       #FF79C6;
+  --pink-light: #44475A;
+  --pink-pale:  #282A36;
+  --pink-dark:  #FF55A3;
+  --text-dark:  #F8F8F2;
+  --text-mid:   #BD93F9;
+  --white:      #F8F8F2;
+}
+#s1, #s2, #s3a, #s3b, #s3c, #s3d, #s4 {
+  background: #282A36;
+}
+.s4__order-item, .s2__base-card, .item-card, .product-card, .popup, .s3a__preview {
+  background: #383A59;
+  border-color: #44475A;
+  color: #F8F8F2;
+}
+body { background: #1E1F2E; }
+*/
+
+
+/* --- TEMPLATE: Mintgroen / Fris ---
+:root {
+  --pink:       #00B894;
+  --pink-light: #A8E6CF;
+  --pink-pale:  #F0FFF8;
+  --pink-dark:  #00856E;
+  --text-dark:  #0D3B2E;
+  --text-mid:   #2D7A5A;
+}
+*/
+
+
+/* --- TEMPLATE: Blauw / Zakelijk ---
+:root {
+  --pink:       #0984E3;
+  --pink-light: #B8D9F7;
+  --pink-pale:  #EBF5FF;
+  --pink-dark:  #0652A0;
+  --text-dark:  #0A2540;
+  --text-mid:   #2D6FA3;
+}
+*/
